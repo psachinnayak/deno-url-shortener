@@ -16,7 +16,7 @@ deno run --allow-net app.ts
 It attempts to utilize redis as the backend, and generate short URLs when /generate is called. Sample for the call to generate:
 
 ```curl
-curl -X POST -H "Content-Type:application/json" -d '{"url":"https://blog.sachinnayak.info"}' http://localhost:8000/generate
+curl -X POST -H "Content-Type:application/json" -d '{"url":"https://blog.sachinnayak.info"}' http://localhost:8000/shorten
 ```
 
 This provides a JSON response. In this JSON response a property *shortUrl* contains the shortened URL.

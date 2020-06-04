@@ -25,12 +25,12 @@ export async function handleConnections(server: Server, db: IDbAccess) {
                     headers.set("Location", "https://blog.sachinnanayak.info");
                     req.respond({ status: 302, headers: headers });
                     break;
-                case "generate":
+                case "shorten":
                     if (req.method == "POST") {
                         let body = await readBody(req);
-                        console.debug(`Generate api called. With Body as ${body} (${body.url}) `);
+                        console.debug(`Shorten api called. With Body as ${body} (${body.url}) `);
                         if (body && body.url) {
-                            console.debug(`Api called. About to generate a short url for ${body.url}`)
+                            console.debug(`Api called. About to shorten the url ${body.url}`)
                             let shortId = null;
                             for (let retry = 3; retry > 0; retry--) {
                                 let uid = new ShortUniqueId();
